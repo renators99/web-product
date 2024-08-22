@@ -20,6 +20,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
 import data from "@/data/data.json";
 
 export default function PriceTracker() {
@@ -32,14 +34,22 @@ export default function PriceTracker() {
         Monitorea los precios de tus competidores, establece estrategias de precios efectivas y responde rápidamente a las fluctuaciones del mercado.
       </p>
       <div className="grid grid-cols-2 gap-4 mb-6">
-        <div className="p-4 border rounded-lg">
-          <h2 className="text-lg font-semibold">Total de productos trackeados</h2>
-          <p className="text-2xl font-bold">{totalProductos}</p>
-        </div>
-        <div className="p-4 border rounded-lg">
-          <h2 className="text-lg font-semibold">Última actualización</h2>
-          <p className="text-2xl font-bold">{ultimaActualizacion}</p>
-        </div>
+        <Card>
+          <CardHeader>
+            <CardTitle>Total de productos trackeados</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-2xl font-bold">{totalProductos}</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>Última actualización</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-2xl font-bold">{ultimaActualizacion}</p>
+          </CardContent>
+        </Card>
       </div>
       <div className="flex items-center mb-6">
         <div className="flex-grow mr-4">

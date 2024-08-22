@@ -1,7 +1,22 @@
+"use client";
+
+import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/use-toast";
 
 export default function Alerts() {
+  const { toast } = useToast();
+
+  const handleSave = () => {
+    // Aquí puedes agregar la lógica para guardar la información.
+    // Luego, mostrar el toast.
+    toast({
+      title: "Información guardada exitosamente",
+      description: "Los datos han sido guardados correctamente.",
+    });
+  };
+
   return (
     <main className="py-8 pl-4">
       <h1 className="text-3xl font-bold mb-2">Alertas</h1>
@@ -34,7 +49,7 @@ export default function Alerts() {
         </div>
       </div>
       <div className="mt-6">
-        <Button variant="default" className="bg-gray-800 text-white">
+        <Button variant="default" className="bg-gray-800 text-white" onClick={handleSave}>
           Guardar información
         </Button>
       </div>
