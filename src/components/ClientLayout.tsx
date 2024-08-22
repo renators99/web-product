@@ -24,7 +24,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       <div className="flex">
         <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <div
-          className={`flex-1 p-12 transition-all ${
+          className={`flex-1 pt-12 px-12 transition-all ${
             isSidebarOpen ? "duration-200 ml-52" : "duration-500 ml-14"
           }`}
         >
