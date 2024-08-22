@@ -41,7 +41,7 @@ export default function PriceTracker() {
         <div className="flex-grow mr-4">
           <Input
             type="text"
-            placeholder="🔍 Buscar por nombre, tu sku o del sku de tu competidor..."
+            placeholder="Buscar por nombre, tu sku o del sku de tu competidor..."
             className="w-full p-4 border rounded-lg"
           />
         </div>
