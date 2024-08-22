@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import stockData from "@/data/stockData.json";
 
 export default function StockTracker() {
   return (
@@ -12,11 +13,11 @@ export default function StockTracker() {
       <div className="grid grid-cols-2 gap-4 mb-6">
         <div className="p-4 border rounded-lg">
           <h2 className="text-lg font-semibold">Productos que tiene tu competidor y tú no</h2>
-          <p className="text-2xl font-bold">2130 / 5123</p>
+          <p className="text-2xl font-bold">{stockData.competitor.productsYouDontHave}</p>
         </div>
         <div className="p-4 border rounded-lg">
           <h2 className="text-lg font-semibold">Productos que tienes tú y tu competidor no</h2>
-          <p className="text-2xl font-bold">2152 / 4921</p>
+          <p className="text-2xl font-bold">{stockData.competitor.productsTheyDontHave}</p>
         </div>
       </div>
       
