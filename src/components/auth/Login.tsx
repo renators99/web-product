@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
+import users from "@/data/users.json"; // Importa el JSON de usuarios
 
 export function LoginForm() {
   const [email, setEmail] = useState("");
@@ -23,10 +24,12 @@ export function LoginForm() {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    
-    // Verificar credenciales
-    if (email === "admin@example.com" && password === "admin123") {
-      // Redirigir a /pricetracker
+
+    // Verificar si el usuario existe en el JSON
+    const user = users.find((user) => user.email === email && user.password === password);
+
+    if (user) {
+      // Redirigir a /pricetracker si las credenciales son correctas
       router.push("/pricetracker");
     } else {
       // Mostrar un toast si las credenciales son incorrectas

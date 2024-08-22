@@ -20,7 +20,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+import data from "@/data/data.json";
+
 export default function PriceTracker() {
+  const { totalProductos, ultimaActualizacion } = data;
+
   return (
     <main className="py-8 pl-4">
       <h1 className="text-3xl font-bold mb-2">Tracker de precios</h1>
@@ -30,11 +34,11 @@ export default function PriceTracker() {
       <div className="grid grid-cols-2 gap-4 mb-6">
         <div className="p-4 border rounded-lg">
           <h2 className="text-lg font-semibold">Total de productos trackeados</h2>
-          <p className="text-2xl font-bold">1450</p>
+          <p className="text-2xl font-bold">{totalProductos}</p>
         </div>
         <div className="p-4 border rounded-lg">
           <h2 className="text-lg font-semibold">Última actualización</h2>
-          <p className="text-2xl font-bold">1/2/2034</p>
+          <p className="text-2xl font-bold">{ultimaActualizacion}</p>
         </div>
       </div>
       <div className="flex items-center mb-6">
